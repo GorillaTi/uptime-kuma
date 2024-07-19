@@ -1,0 +1,24 @@
+name: uptime-kuma
+services:
+    uptime-kuma:
+        container_name: uptime-kuma
+        image: louislam/uptime-kuma:1
+        restart: always
+        ports:
+            - 127.0.0.1:3001:3001
+        # networks:
+        # my-custom-network:
+        #     ipv4_address: 172.16.0.2
+        dns:
+            - 172.16.20.60
+            - 8.8.8.8
+        volumes:
+            - ./uptime-kuma:/app/data
+# networks:
+#     my-custom-network:
+#         external: true
+#         name: my-custom-network
+# volumes:
+#     uptime-kuma:
+#         external:
+#             name: uptime-kuma
