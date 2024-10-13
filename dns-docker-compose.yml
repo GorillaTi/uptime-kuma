@@ -1,0 +1,15 @@
+name: uptime-kuma
+services:
+  uptime-kuma:
+    hostname: uptime-kuma
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - 3001:3001
+    #dns:
+    #- 172.16.20.60
+    #- 17.16.20.1
+    volumes:
+      - ./uptime-kuma:/app/data
+      - ./uptime-kuma/resolv.conf:/etc/resolv.conf
